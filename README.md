@@ -1,8 +1,7 @@
 ![](https://ydq1jlhdhy-flywheel.netdna-ssl.com/wp-content/uploads/2014/05/airport-banner.jpg)
 
 # Flight Delay Prediction
-## Machine Learning Engineer Nanodegree
-## Capstone Proposal
+## Machine Learning Engineer Nanodegree - Capstone Proposal
 Diogo Dutra
 November 11th, 2018
 
@@ -11,8 +10,10 @@ November 11th, 2018
 ### Domain Background
 _Flight delays_
 
-Aerial commute is increasingly important as the globalization advances and the world population grows. However, the air traffic is also becoming a issue, especially for the most used regional hubs. While transportation infrastructure is mainly a role for the governments, predicting the flight delays are accessible for private initiative and it will benefit those passengers running tight on schedule by allowing them to reorganize their tasks on advance.
-The most common causes of flight delays are varied [reference](https://en.wikipedia.org/wiki/Flight_cancellation_and_delay). While some are not related to accessble data, some other might be within reach. The inaccessible data will remain as noise caused from security, maintenance and distater issues. The accessible data are weather and congestion that hopefully will shed some light to predict some of the flight delays.
+Aerial commute is increasingly important as the globalization advances and the world population grows. However, the air traffic is also becoming a issue, especially for the most used regional hubs. While transportation infrastructure is mainly a role for the governments, predicting the flight delays may be accessible for private initiative and it will benefit those passengers running tight on schedule by allowing them to reorganize their tasks on advance.
+
+The most common causes of flight delays are varied [[reference]](https://en.wikipedia.org/wiki/Flight_cancellation_and_delay). While some are not related to accessble data, some other might be within reach. The inaccessible data will remain as noise caused from security, maintenance and distater issues. The accessible data are weather and congestion that hopefully will shed some light to predict some of the flight delays.
+
 The inspiration for such topic is clear for the author because of a combination of being a frequent airplane traveller and an experienced aeronautical engineer.
 
 ### Problem Statement
