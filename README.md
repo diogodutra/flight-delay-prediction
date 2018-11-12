@@ -1,4 +1,6 @@
 ![](https://ydq1jlhdhy-flywheel.netdna-ssl.com/wp-content/uploads/2014/05/airport-banner.jpg)
+_source
+###### source: https://ydq1jlhdhy-flywheel.netdna-ssl.com/wp-content/uploads/2014/05/airport-banner.jpg
 
 # Flight Delay Prediction
 ## Machine Learning Engineer Nanodegree - Capstone Proposal
@@ -51,6 +53,7 @@ The pipeline will be divided in 4 different files.
 The departure data will be downloaded directly from the source as CSV files for replicability. The source are CSV files separated by months and are directly accessible by url. For this reason, the algorithm will dowload all of them separatedly and then append as illustrated below.
 
 ![](http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif)
+###### source: http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif
 
 The weather files are also separated by months. However, they are not directly accessible by url as the website requires a login. For this reason, each of the files will be manually downloaded as XLS and then saved as CSV. All the files  will be available at the repository for public offline access. Then, the weather tables will be appended similarly as the departure tables.
 
@@ -61,6 +64,7 @@ The departure table will be filtered to discard all routes except the one's rega
 
 The departure and weather tables will be merged by the nearest common date and time. The merge will be from left to right, meaning that useless weather data will be discarded as illustrated below.
 ![](https://datacarpentry.org/python-ecology-lesson/fig/left-join.png)
+###### source https://datacarpentry.org/python-ecology-lesson/fig/left-join.png
 
 Then, the table will have its columns modified for adaptation to the scikit-learn type. For instance, there will be conversion from string to datetime type and the **"Flight Delay"** label in minutes will be calculated from the difference between the scheduled and the real arrivals.
 
