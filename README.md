@@ -20,30 +20,32 @@ The inspiration for such topic is clear for the author because of a combination 
 _How much will be the flight delay?_
 
 Basically, the predictive model shall be able to answer ther following question:
->Given the departure information what will be the flight delay in minutes?
+>Given the departure information, what will be the flight delay in minutes?
 
 The departure information is all the data available before the take-off, including scheduled time, date, airliner, flight number, air temperature, air pressure, visibility and so on.
 
 ### Datasets and Inputs
 _ANAC and BDM_
 
-The historical data of flight departures and arrivals will be the world most busy regional aerial commute to maximize the ammount of available data. The Brazilian one-way from São Paulo (Guarulhos airport) to Rio de Janeiro (Sandos Dumont airport) is the most numerous by quantity of departures per day.
+The chosen data of flight departures and arrivals are the world most busy regional aerial commute in order to maximize the ammount of available data. The Brazilian one-way commute from São Paulo (Guarulhos airport) to Rio de Janeiro (Sandos Dumont airport) is the most numerous by quantity of departures per day.
+
 The 2018 historical dataset from January to September will be downloaded from the [ANAC website](http://www.anac.gov.br).
 The weather data will be the [METAR](https://en.wikipedia.org/wiki/METAR) type and specific to the departure airport extracted directly from the [INPE's BDM website](http://bancodedados.cptec.inpe.br/).
+
 Both departure and weather data will be merged into one single table considering the nearest date and time. Such table will be the sample input to the pipeline.
 
 ### Solution Statement
 _Supervised learning regression_
 
 The predictive algorithm shall be a supervised learning regression in order to estimate the flight delay in minutes.
-The input will be split between train, test and plot data from random choice.
+The input will be split between train and test data by random.
 
 Different options of regression algorithms will be considered by applicability and compared by accuracy. The chosen one will be further polished for even better accuracy.
 
 ### Benchmark Model
 _Better than naive_
 
-The answer to the problem statement shall be more accurated than the "naive guess", where "naive guess" means estimating null delay for every flight. In order to compare, the same evaluation metrics will be considered for both the predictive model and the "naive guess".
+The obtained predictive model ideally should be more accurate than the "naive guess", where "naive guess" means estimating null delay for every flight. For comparison, the same evaluation metrics will be considered for both the predictive model and the "naive guess".
 
 
 ### Evaluation Metrics
@@ -60,9 +62,12 @@ Additionally, there shall be a linear plot of percent of successfull flight dela
 
 ### Structure
 The pipeline will be divided in 4 different files.
-The first file will be used to download the data from the sources whenever it is possible. The more files can be downloaded by algorithm the better due to replicability. Should some data be not possible ti download by algorithm then it should be available in the repository for public offline access. 
+The first file will be used to download the data from the sources whenever it is possible. The more files can be downloaded by algorithm the better for replicability. Should some data not be possible to download by algorithm then it should be available in the repository for public offline access. 
+
 The second file will be used to prepare the downloaded data as an usefull input table. It means that the missed data will be treated and bot weather and departure tables will be the merged. All columns will also be derived (ie: delay in minutes), removed or changed in order to prepare for later use for plot, model fit and analysis.
+
 The third file will be used to explore the data with different plots for insights. The insights will hopefully be which features are the more relevants, which algorithms are the better candidates for predictive model and which difficulties are expected to be ahead.
+
 The fourth file will be used to split the samples into train and test data, to train the candidate models, to select which model is the final one, to improve its accuracy and finally to evaluate its performance over the benchmark.
 
 ### 1st File - Download
