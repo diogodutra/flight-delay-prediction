@@ -5,28 +5,20 @@
 Diogo Dutra
 November 11th, 2018
 
-## Proposal
-
-### Domain Background
-_Flight delays_
-
+### Domain Background - Flight delays
 Aerial commute is increasingly important as the globalization advances and the world population grows. However, the air traffic is also becoming a issue, especially for the most used regional hubs. While transportation infrastructure is mainly a role for the governments, predicting the flight delays may be accessible for private initiative and it will benefit those passengers running tight on schedule by allowing them to reorganize their tasks on advance.
 
 The most common causes of flight delays are varied [[reference]](https://en.wikipedia.org/wiki/Flight_cancellation_and_delay). While some are not related to accessble data, some other might be within reach. The inaccessible data will remain as noise caused from security, maintenance and distater issues. The accessible data are weather and congestion that hopefully will shed some light to predict some of the flight delays.
 
 The inspiration for such topic is clear for the author because of a combination of being a frequent airplane traveller and an experienced aeronautical engineer.
 
-### Problem Statement
-_How much will be the flight delay?_
-
+### Problem Statement - How much will be the flight delay?
 Basically, the predictive model shall be able to answer ther following question:
->Given the departure information, how many minutes will be the flight delay?
+> **_Given the departure information, how many minutes will be the flight delay?_**
 
 The input data are all the available data before the take-off, including scheduled time, date, airliner, flight number, air temperature, air pressure, visibility and so on.
 
-### Datasets and Inputs
-_ANAC and BDM_
-
+### Datasets and Inputs - ANAC and BDM
 The considered data of flight departures and arrivals are the world most busy regional aerial commute in order to maximize the ammount of available data. The Brazilian one-way commute from São Paulo (Guarulhos airport) to Rio de Janeiro (Sandos Dumont airport) is the most numerous by quantity of departures per day.
 
 The 2018 historical dataset from January to September will be downloaded from the [ANAC website](http://www.anac.gov.br).
@@ -34,44 +26,29 @@ The weather data will be the [METAR](https://en.wikipedia.org/wiki/METAR) type a
 
 Both departure and weather data will be merged into one single table considering the nearest date and time. Such table will be the sample input to the pipeline.
 
-### Solution Statement
-_Supervised learning regression_
-
+### Solution Statement - Supervised learning regression
 The predictive algorithm shall be a supervised learning regression in order to estimate the flight delay in minutes.
 
 Different options of regression algorithms will be considered by applicability and compared by accuracy. The chosen one will be further polished for even better accuracy.
 
-### Benchmark Model
-_Better than naive_
-
+### Benchmark Model - Better than naive
 The obtained predictive model should ideally be more accurate than the "naive guess", where "naive guess" means estimating null delay for every flight. For comparison, the same evaluation metrics will be considered for both the predictive model and the "naive guess".
 
 
-### Evaluation Metrics
-_Sum of errors_
-
+### Evaluation Metrics - Sum of errors
 The considered metrics are:
 - Sum of MSE (mean squared error)
 - Sum of absolute errors
 
 Additionally, there shall be a linear plot of percent of successfull flight delay estimatives (y axis) by threshold of error tolerance (x axis) comparing both the predictive model and the "naive guess". This plot will be a support for extra insights.
 
-
+ 
 ## Project Design
 
-### Structure
 The pipeline will be divided in 4 different files.
-The first file will be used to download the data from the sources whenever it is possible. The more files can be downloaded by algorithm the better for replicability. Should some data not be possible to download by algorithm then it should be available in the repository for public offline access. 
-
-The second file will be used to prepare the downloaded data as an usefull input table. It means that the missed data will be treated and both weather and departure tables will be the merged. All columns will also be derived (ie: delay in minutes), removed or changed in order to prepare for later use for plot, model fit and analysis.
-
-The third file will be used to explore the data with different plots for insights. The insights will hopefully be which features are the more relevants, which algorithms are the better candidates for predictive model and which difficulties are expected to be ahead.
-
-The fourth file will be used to split the samples into train and test data, to train the candidate models, to select which model is the final one, to fine tune it and finally to evaluate its performance over the benchmark.
 
 ### 1st File - Download
-The data will be downloaded directly from the source as CSV files.
-The source of the departure files are CSV separated by months and are directly accessible by url. For this reason, the algorithm will dowload all of them separatedly and then append them as illustrated below.
+The departure data will be downloaded directly from the source as CSV files for replicability. The source are CSV files separated by months and are directly accessible by url. For this reason, the algorithm will dowload all of them separatedly and then append as illustrated below.
 
 ![](http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif)
 
@@ -85,10 +62,9 @@ The departure table will be filtered to discard all routes except the one's rega
 The departure and weather tables will be merged by the nearest common date and time. The merge will be from left to right, meaning that useless weather data will be discarded as illustrated below.
 ![](https://datacarpentry.org/python-ecology-lesson/fig/left-join.png)
 
-Then, the table will have its columns modified for adaptation to the scikit-learn type. For instance, there will be conversion from string to datetime type and the "Flight Delay" label in minutes will be calculated from the difference between the scheduled and the real arrivals.
+Then, the table will have its columns modified for adaptation to the scikit-learn type. For instance, there will be conversion from string to datetime type and the **"Flight Delay"** label in minutes will be calculated from the difference between the scheduled and the real arrivals.
 
 The final input table will be saved as local file for persistent access. This file will also be available at the repository for public offline access.
-
 
 ### 3rd File - Exploration
 The prepared input table will then be used for a series of plots to better understand how is the data variation over its dimensions. We will focus on how each feature is correlated with the label "Flight Delay".
