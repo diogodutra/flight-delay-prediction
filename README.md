@@ -1,5 +1,4 @@
 ![](https://ydq1jlhdhy-flywheel.netdna-ssl.com/wp-content/uploads/2014/05/airport-banner.jpg)
-_source
 ###### source: https://ydq1jlhdhy-flywheel.netdna-ssl.com/wp-content/uploads/2014/05/airport-banner.jpg
 
 # Flight Delay Prediction
