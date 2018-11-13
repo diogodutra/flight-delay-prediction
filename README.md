@@ -6,21 +6,21 @@
 Diogo Dutra
 November 11th, 2018
 
-### Domain Background - Flight delays
-Aerial commute is increasingly important as the globalization advances and the world population grows. However, the air traffic is also becoming a issue, especially for the most used regional hubs. While transportation infrastructure is mainly a role for the governments, predicting the flight delays may be accessible for private initiative and it will benefit those passengers running tight on schedule by allowing them to reorganize their tasks on advance.
+### Domain Background - Air Traffic
+Aerial commute is increasingly important as the globalization advances and the world population grows. However, the air traffic is also becoming an issue, especially for the most used regional hubs. While transportation infrastructure is mainly a role for the governments, predicting the flight delays may be accessible for private initiative and it will benefit those passengers running tight on schedule by allowing them to reorganize their tasks on advance.
 
-The most common causes of flight delays are varied [[reference]](https://en.wikipedia.org/wiki/Flight_cancellation_and_delay). While some are not related to accessble data, some other might be within reach. The inaccessible data will remain as noise caused from security, maintenance and distater issues. The accessible data are weather and congestion that hopefully will shed some light to predict some of the flight delays.
+The most common causes of flight delays are varied [[reference]](https://en.wikipedia.org/wiki/Flight_cancellation_and_delay). While some are not related to accessible data, others might be within reach. The inaccessible data will remain as noise caused from security, maintenance and disaster issues. The accessible data are weather and congestion that hopefully will shed some light to predict some of the flight delays.
 
-The inspiration for such topic is clear for the author because of a combination of being a frequent airplane traveller and an experienced aeronautical engineer.
+The inspiration for such topic is clear for the author because of a combination of being a frequent flyer and an experienced aeronautical engineer.
 
 ### Problem Statement - How much will be the flight delay?
 Basically, the predictive model shall be able to answer ther following question:
 > **_Given the departure information, how many minutes will be the flight delay?_**
 
-The input data are all the available data before the take-off, including scheduled time, date, airliner, flight number, air temperature, air pressure, visibility and so on.
+The input data are all the available data before the scheduled moment for the take-off, including time, date, airliner, flight number, air temperature, air pressure, visibility and so on.
 
 ### Datasets and Inputs - ANAC and BDM
-The considered data of flight departures and arrivals are the world most busy regional aerial commute in order to maximize the ammount of available data. The Brazilian one-way commute from São Paulo (Guarulhos airport) to Rio de Janeiro (Sandos Dumont airport) is the most numerous by quantity of departures per day.
+The considered data of flight departures and arrivals are the world most busy regional aerial commute in order to maximize the ammount of available data. The Brazilian one-way commute from São Paulo (Guarulhos airport) to Rio de Janeiro (Santos Dumont airport) is the most numerous by quantity of departures per day.
 
 The 2018 historical dataset from January to September will be downloaded from the [ANAC website](http://www.anac.gov.br).
 The weather data will be the [METAR](https://en.wikipedia.org/wiki/METAR) type and specific to the departure airport extracted directly from the [INPE's BDM website](http://bancodedados.cptec.inpe.br/).
@@ -49,7 +49,7 @@ Additionally, there shall be a linear plot of percent of successfull flight dela
 The pipeline will be divided in 4 different files.
 
 ### 1st File - Download
-The departure data will be downloaded directly from the source as CSV files for replicability. The source are CSV files separated by months and are directly accessible by url. For this reason, the algorithm will dowload all of them separatedly and then append as illustrated below.
+The departure data will be downloaded directly from the source as CSV files for replicability. The source are CSV files separated by months and are directly accessible by url. For this reason, the algorithm will dowload all of them separatedly and then append them as illustrated below.
 
 ![](http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif)
 ###### source: http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif
@@ -70,7 +70,7 @@ Then, the table will have its columns modified for adaptation to the scikit-lear
 The final input table will be saved as local file for persistent access. This file will also be available at the repository for public offline access.
 
 ### 3rd File - Exploration
-The prepared input table will then be used for a series of plots to better understand how is the data variation over its dimensions. We will focus on how each feature is correlated with the label "Flight Delay".
+The prepared input table will then be used for a series of plots to better understand how is the data variation over its dimensions. We will focus on how each feature is correlated with the label **"Flight Delay"**.
 
 The series of plots will be of two kinds: scatter with transparency and violin distribution. These plots may give us enough insights to choose some candidates for types of regression algorithms and which features should be considered for the last phase of this pipeline.
 
