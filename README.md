@@ -3,8 +3,7 @@
 
 # Flight Delay Prediction
 ## Machine Learning Engineer Nanodegree - Capstone Proposal
-Diogo Dutra
-#### November 11th, 2018
+Diogo Dutra. November 11th, 2018
 
 ### Domain Background - Air Traffic
 Aerial commute is increasingly important as the globalization advances and the world population grows. However, the air traffic is also becoming a challenge, especially for the most used regional hubs. While transportation infrastructure is mainly a role for the governments, predicting the flight delays may be accessible for private initiative and it will benefit those passengers running tight on schedule by allowing them to reorganize their tasks on advance.
