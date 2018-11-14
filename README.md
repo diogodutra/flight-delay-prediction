@@ -54,7 +54,7 @@ The departure data will be downloaded directly from the source as CSV files for 
 ![](http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif)
 ###### source: http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif
 
-The weather files are also separated by months. However, they are not directly accessible by url as the website requires a login. For this reason, each of the files will be manually downloaded as XLS and then saved as CSV. All the files  will be available at the repository for public offline access. Then, the weather tables will be appended similarly as the departure tables.
+The weather files are also separated by months. However, they are not directly accessible by url as the website requires a login. For this reason, each of the files will be manually downloaded as XLS and then saved as CSV. All the files  will be available at the repository for public access. Then, the weather tables will be appended similarly as the departure tables.
 
 ### 2nd File - Preparing
 The downloaded data will be loaded into Panda's dataframe tables.
@@ -67,7 +67,7 @@ The departure and weather tables will be merged by the nearest common date and t
 
 Then, the table will have its columns modified for adaptation to the scikit-learn type. For instance, there will be conversion from string to datetime type and the **"Flight Delay"** label in minutes will be calculated from the difference between the scheduled and the real arrivals.
 
-The final input table will be saved as local file for persistent access. This file will also be available at the repository for public offline access.
+The final input table will be saved as local file for persistent access. This file will also be available at the repository for public access.
 
 ### 3rd File - Exploration
 The prepared input table will then be used for a series of plots to better understand how is the data variation over its dimensions. We will focus on how each feature is correlated with the label **"Flight Delay"**.
