@@ -19,7 +19,7 @@ Basically, the predictive model shall be able to answer the following question:
 The input data are all the available data before the scheduled moment for the take-off, including time, date, airliner, flight number, air temperature, air pressure, visibility and so on.
 
 ### Datasets and Inputs - ANAC and BDM
-The considered data of flight departures and arrivals are the world most busy regional aerial commute in order to maximize the ammount of available data. The Brazilian one-way commute from São Paulo (Guarulhos airport) to Rio de Janeiro (Santos Dumont airport) is the most numerous by quantity of departures per day.
+The considered data of flight departures and arrivals are the world most busy regional aerial commute in order to maximize the amount of available data. The Brazilian one-way commute from São Paulo (Guarulhos airport) to Rio de Janeiro (Santos Dumont airport) is the most numerous by quantity of departures per day.
 
 The 2018 historical dataset from January to September will be downloaded from the [ANAC website](http://www.anac.gov.br).
 The weather data will be the [METAR](https://en.wikipedia.org/wiki/METAR) type and specific to the departure airport extracted directly from the [INPE's BDM website](http://bancodedados.cptec.inpe.br/).
