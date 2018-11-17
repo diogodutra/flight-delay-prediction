@@ -13,7 +13,7 @@ The most common causes of flight delays are varied [[reference]](https://en.wiki
 The inspiration for such topic is clear for the author because of a combination of being a frequent flyer and an experienced aeronautical engineer.
 
 ### Problem Statement - How much will be the flight delay?
-Basically, the predictive model shall be able to answer ther following question:
+Basically, the predictive model shall be able to answer the following question:
 > **_Given the departure information, how many minutes will be the flight delay?_**
 
 The input data are all the available data before the scheduled moment for the take-off, including time, date, airliner, flight number, air temperature, air pressure, visibility and so on.
