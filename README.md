@@ -48,7 +48,7 @@ Additionally, there shall be a linear plot of percent of successfull flight dela
 The pipeline will be divided in 4 different files.
 
 ### 1st File - Download
-The departure data will be downloaded directly from the source as CSV files for replicability. The source are CSV files separated by months and are directly accessible by url. For this reason, the algorithm will dowload all of them separatedly and then append them as illustrated below.
+The departure data will be downloaded directly from the source as CSV files for replicability. The source are CSV files separated by months and are directly accessible by url. For this reason, the algorithm will dowload all of them separately and then append them as illustrated below.
 
 ![](http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif)
 ###### source: http://www.digdb.com/excel_add_ins/combine_append_tables_sheets_files/1.gif
