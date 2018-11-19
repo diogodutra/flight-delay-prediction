@@ -45,6 +45,8 @@ Additionally, there shall be a linear plot of percent of successfull flight dela
  
 ## Project Design
 
+The project is developed with Python 3.X with Anaconda modules (Numpy, Pandas, Scikit-learn, Matplotlib) over Notebook Jupyter.
+
 The pipeline will be divided in 4 different files.
 
 ### 1st File - Download
